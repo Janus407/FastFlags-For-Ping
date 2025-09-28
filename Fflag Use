@@ -1,0 +1,34 @@
+Here's a simple script to potentially help with low ping and texture issues in Roblox:
+
+*For Performance:*
+
+1. Lower Graphics Quality:
+```
+game:GetService("Players").LocalPlayer.PlayerGui:SetTopbarTransparency(0)
+game:GetService("Workspace").Terrain:SetLODs(1)
+```
+
+2. Disable Rendering of Distant Objects:
+```
+game:GetService("Workspace"):SetStreamingEnabled(true)
+```
+
+*For No Texture:*
+
+1. Remove Textures:
+```
+for _, descendant in pairs(workspace:GetDescendants()) do
+    if descendant:IsA("BasePart") then
+        descendant.Material = Enum.Material.Plastic
+        descendant.BrickColor = BrickColor.new("White")
+    end
+end
+```
+
+*Note:*
+
+1. These scripts might require LocalScript or Script placement.
+2. Some scripts may only work in specific environments or versions.
+3. Be cautious when using scripts, as they can impact gameplay.
+
+Would you like more details or specific script placement instructions?
